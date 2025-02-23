@@ -1,0 +1,476 @@
+:root{
+    --main-color: #333333;
+    --background-color: #f6f6f6;
+    --grey-color: #d6d6d6;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;   
+    margin: 0;
+}
+
+body{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    background-color: var(--background-color);
+}
+
+/* Top Section */
+.top{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.top .menu_toggle, .top .menu_toggle img{
+    width: auto;
+    height: 32px;
+    opacity: 70%;
+    cursor: pointer;
+}
+.top .menu_toggle img:hover{
+    opacity: 100%;
+}
+.top .sort_container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.top .sort_container .list{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dedede;
+    z-index: 40;
+}
+.top .sort_container .list a{
+    text-decoration: none;
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 0;
+    width: 180px;
+    color: rgba(0, 0, 0, 0.5);
+    border-top: 0.5px solid rgba(0, 0, 0, 0.119);
+    text-align: center;
+}
+.top .sort_container .list a:hover{
+    background-color: #CDCDCD;
+    border-left: 3px solid black;
+    color: rgba(0, 0, 0);
+}
+.top .sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 82px;
+    padding: 8px 24px;
+    border: 2px solid #00000088;
+    opacity: 50%;
+    transition: 0.5 ease-in-out;
+    cursor: pointer;
+}
+
+.top .sort h5{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+.top .sort img{
+    width: 20px;
+    height: 15px;
+}
+
+.top .search_bar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 1s ease-in-out
+}
+.top .search_bar img{
+    width: 25px;
+    height: 25px;
+    opacity: 50%;
+    transition: 0.5 ease-in-out;
+    cursor: pointer;
+}
+
+.top .sort:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top .search_bar input{
+    display: none;
+    padding-left: 12px;
+    transition: 1s ease-in-out;
+}
+.top .search_bar:hover input{
+    border: 2px solid rgba(0, 0, 0, 0.61);
+    border-radius: 25px;
+    height: 36px;
+    width: 300px;
+    background-color: transparent;
+    display: block;
+}
+.top .search_bar:hover img{
+    position: absolute;
+    transform: scale(0.9);
+    right: 10px;
+}
+
+.top .search_bar input:focus{
+    outline: none;
+}
+
+
+/* Card Section */
+#product.wrapper{
+    padding-top: 90px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px);
+    row-gap: 30px;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-bottom: 72px;
+}
+.container .card{
+    position: relative;
+    width: 280px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .card .image{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 8%);
+    width: 90%;
+    height: 50%;
+    background-color: var(--grey-color);
+    transition: 0.4s ease;
+}
+.container .card .image img{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    transition: 0.45s ease-in-out;
+}
+.container .card:hover .image{
+    height: 48%;
+}
+.container .card:hover .image img{
+    transform: translate(-55%, -80%) rotate(-25deg) scale(1.2);
+}
+.container .card .detail{
+    margin-top: 220px;
+    text-align: center;
+    padding: 0 40px;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover .detail{
+    margin-top: 190px;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.container .card h2{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.container .card span{
+    font-family: "Inria Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container .card a span{
+    display: none;
+    opacity: 0;
+    transition: 1s ease;
+}
+.container .card a{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    background-color: transparent;
+    width: fit-content;
+    border-radius: 25px;
+    top:63.5%;
+    right: 20px;
+    transition: background-color 1s ease;
+}
+.container .card a:hover{
+    background-color: #55DA96;
+    padding-right: 8px;
+}
+
+.container .card a:hover span{
+    display: block;
+    opacity: 1;
+}
+.container .card a:hover:active{
+    background-color: #40B277;
+}
+.container .card a span{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+}
+
+.container .card a img{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    width: 16px;
+    height: auto;
+}
+.container .card p{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover .detail .size, 
+.container .card:hover .detail .color{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container .card .detail .size, .container .card .detail .color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.container .card .detail .size{
+    margin-top: 12px;
+}
+.container .card .detail .color{
+    margin-top: 8px;
+}
+.container .card .detail .size h3, .container .card .detail .color h3{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.container .card .detail .size span{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: #000;
+    background-color: white;
+    border: 0.5px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.1s ease;
+}
+
+.container .card .detail .color span{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    border: 2.5px solid rgb(255, 255, 255);
+    transition: 0.1s ease;
+}
+.container .card .detail .color span:nth-child(2){
+    background-color: rgb(208, 0, 100);
+}
+.container .card .detail .color span:nth-child(3){
+    background-color: rgb(0, 11, 210);
+}
+.container .card .detail .color span:nth-child(4){
+    background-color: rgb(0, 227, 57);
+}
+.container .card .detail .color span:nth-child(5){
+    background-color: rgb(236, 2, 2);
+}
+.container .card .detail .size span:hover{
+    background-color: #2ae540;
+    color: white;
+}
+
+.container .card .detail .color span:hover{
+    border: 3.5px solid rgb(131, 251, 153);
+}
+
+
+
+/* Side Menu Section */
+
+.side_menu{
+    position: absolute;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #dedede;
+    width: fit-content;
+    padding: 16px 16px 0 16px;
+    top: 65px;
+    left: 0;
+    z-index: 50;
+    transition: 0.5s ease;
+    /* display: none; */
+}
+
+.side_menu .menu_toggle{
+    align-self: flex-end;
+    opacity: 50%;
+    cursor: pointer;
+}
+.side_menu .menu_toggle img{
+    width: 20px;
+    height: auto;
+}
+
+.side_menu .head{
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: rgba(0, 0, 0, 0.5);
+    /* opacity: 50%; */
+    /* background-color: #7d1e1e58; */
+    
+    cursor: pointer;
+}
+.side_menu .category{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.side_menu .head:hover{
+    background-color: #CDCDCD;
+}
+.side_menu .category h5{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.side_menu .category img{
+    width: 15px;
+    height: auto;
+}
+
+.side_menu .category .list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    transition: 0.5s ease;
+}
+
+.side_menu .category .list a{
+    text-decoration: none;
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 0;
+    width: 160px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.side_menu .category .list a:hover{
+    background-color: #CDCDCD;
+    border-left: 3px solid black;
+    color: rgba(0, 0, 0);
+}
+
+.side_menu .menu_toggle:hover{
+    opacity: 100%;
+}
+
+#sideMenu, #sortList{
+    display: none;
+}
+
+#brand, #gender, #type{
+    display: none;
+}
+@media (max-width: 1256px){
+    .top{
+        margin-left: 10%;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 280px);
+        gap: 30px;
+        justify-content: center;
+        padding: 20px 32px 0 32px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 899px) {
+    .top{
+        justify-content: space-between;
+        margin: 0;
+        padding: 0 32px;
+    }
+}
+
+/* Mobile */
+@media (max-width:680px) {
+    .container{
+        grid-template-columns: repeat(auto-fit, 80%);
+    }
+    .container .card{
+        width: 100%;
+    }
+    .top .search_bar input{
+        padding-left: 16px;
+    }
+    .top .search_bar:hover input{
+        position: fixed;
+        border: 2px solid rgba(0, 0, 0, 0.61);
+        border-radius: 25px;
+        height: 40px;
+        width: 95%;
+        left: 50%;
+    transform: translate(-50%);
+        background-color: white;
+        display: block;
+    }
+    .top .search_bar input:focus{
+        outline: none;
+        background-color: rgb(222, 222, 222);
+    }
+}

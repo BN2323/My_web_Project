@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;   
+    margin: 0;
+}
+
+body{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+}
+
+.wrappers{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contact_card{
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: fit-content;
+    gap: 32px;
+    padding: 32px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.467);
+}
+
+.contact_card h1{
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.contact_card input{
+    background-color: #d9d9d9;
+    outline: none;
+    height: 56px;
+    width: 90%;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid #000000;
+}
+
+.contact_card input:focus{
+    background-color: #c7c7c7;
+    border: 2px solid #000000;
+}
+.contact_card a{
+    text-decoration: none;
+    font-family: "Poppins", "Inria Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    padding: 16px 20px;
+    border-radius: 20px;
+    border:3px solid #000000;
+}
+
+.contact_card a:hover{
+    background-color: #000000;
+    color: white;
+    border:3px solid #f0f0f0;
+}
+
+.contact_card .logo{
+    border-top: 2px solid rgb(78, 78, 78);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    text-align: center;
+}
+.contact_card .logo img{
+    height: auto;
+    width: 64px;
+}
+
+@media (max-width:899px) {
+    .contact_card{
+        width: 90%;
+    }
+}
+
+@media (max-width:550px) {
+    .contact_card h1{
+        font-size: 32px;
+    }
+    .contact_card input{
+        font-size: 12px;
+        height: 48px;
+    }
+    .contact_card a{
+        text-decoration: none;
+        font-family: "Poppins", "Inria Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: #000000;
+        padding: 8px 16px;
+        border-radius: 20px;
+        border:3px solid #000000;
+    }
+    .contact_card .logo{
+        padding: 0;
+        width: 80%;
+        justify-content: center;
+        gap: 0;
+    }
+    .contact_card .logo img{
+        transform: scale(0.5);
+    }
+}
